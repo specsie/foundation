@@ -1,0 +1,77 @@
+{
+    "type": "object", 
+    "$schema": "http://json-schema.org/draft-03/schema", 
+    "id": "http://specsy.net", 
+    "required": true, 
+    "properties": {
+        "constraints": {
+            "type": "array", 
+            "id": "http://specsy.net/constraints", 
+            "required": true, 
+            "items": {
+                "type": "object", 
+                "id": "http://specsy.net/constraints/0", 
+                "required": true, 
+                "properties": {
+                    "constraint": {
+                        "type": "string", 
+                        "id": "http://specsy.net/constraints/0/constraint", 
+                        "required": false
+                    }
+                }
+            }
+        }, 
+        "description": {
+            "type": "array", 
+            "id": "http://specsy.net/description", 
+            "required": true, 
+            "items": {
+                "type": "string", 
+                "id": "http://specsy.net/description/0", 
+                "required": false
+            }
+        }, 
+        "includes": {
+            "type": "array", 
+            "id": "http://specsy.net/includes", 
+            "required": true, 
+            "items": {
+                "type": "string", 
+                "id": "http://specsy.net/includes/0", 
+                "required": false
+            }
+        }, 
+        "inherits": {
+            "type": "object", 
+            "id": "http://specsy.net/inherits", 
+            "required": true, 
+            "properties": {
+                "spec": {
+                    "type": "string", 
+                    "id": "http://specsy.net/inherits/spec", 
+                    "required": true
+                }, 
+                "baseline": {
+                    "type": "string", 
+                    "id": "http://specsy.net/inherits/baseline", 
+                    "required": false
+                }
+            }
+        }, 
+        "json-schema": {
+            "type": "array", 
+            "id": "http://specsy.net/json-schema", 
+            "required": false, 
+            "items": {
+                "type": "string", 
+                "id": "http://specsy.net/json-schema/0", 
+                "required": false
+            }
+        }, 
+        "spec": {
+            "type": "string", 
+            "id": "http://specsy.net/spec", 
+            "required": false
+        }
+    }
+}
