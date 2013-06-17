@@ -1,77 +1,108 @@
 {
     "type": "object", 
     "$schema": "http://json-schema.org/draft-03/schema", 
-    "id": "http://specsy.net/schema/foundation", 
+    "id": "http://specsie.org/schema/foundation", 
     "required": true, 
     "properties": {
         "constraints": {
             "type": "array", 
-            "id": "https://specsy.net/schema/foundation/constraints", 
+            "id": "http://specsie.org/schema/foundation/constraints", 
             "required": true, 
             "items": {
                 "type": "object", 
-                "id": "https://specsy.net/schema/foundation/constraints/0", 
+                "id": "http://specsie.org/schema/foundation/constraints/0", 
                 "required": true, 
                 "properties": {
                     "constraint": {
-                        "type": "string", 
-                        "id": "https://specsy.net/schema/foundation/constraints/0/constraint", 
+                        "type": [
+                            "string"
+                        ], 
+                        "id": "http://specsie.org/schema/foundation/constraints/0/constraint", 
                         "required": false
+                    }, 
+                    "qualifiers": {
+                        "type": "array", 
+                        "id": "http://specsie.org/schema/foundation/includes", 
+                        "required": false, 
+                        "items": {
+                            "type": [
+                                "$ref:http://specsie.org/schema/foundation/constraints/0"
+                            ], 
+                            "id": "http://specsie.org/schema/foundation/constraints/0/constraint", 
+                            "required": false
+                        }
                     }
                 }
             }
         }, 
         "description": {
             "type": "array", 
-            "id": "https://specsy.net/schema/foundation/description", 
+            "id": "http://specsie.org/schema/foundation/description", 
             "required": true, 
             "items": {
                 "type": "string", 
-                "id": "https://specsy.net/schema/foundation/description/0", 
+                "id": "http://specsie.org/schema/foundation/description/0", 
                 "required": false
             }
         }, 
         "includes": {
             "type": "array", 
-            "id": "https://specsy.net/schema/foundation/includes", 
+            "id": "http://specsie.org/schema/foundation/includes", 
             "required": true, 
             "items": {
                 "type": "string", 
-                "id": "https://specsy.net/schema/foundation/includes/0", 
+                "id": "http://specsie.org/schema/foundation/includes/0", 
                 "required": false
             }
         }, 
         "inherits": {
-            "type": "object", 
-            "id": "https://specsy.net/schema/foundation/inherits", 
+            "type": "array", 
+            "id": "http://specsie.org/schema/foundation/inherits", 
             "required": true, 
-            "properties": {
-                "spec": {
-                    "type": "string", 
-                    "id": "https://specsy.net/schema/foundation/inherits/spec", 
-                    "required": true
-                }, 
-                "baseline": {
-                    "type": "string", 
-                    "id": "https://specsy.net/schema/foundation/inherits/baseline", 
-                    "required": false
+            "items": {
+                "type": "object", 
+                "id": "http://specsie.org/schema/foundation/inherits0", 
+                "required": true, 
+                "properties": {
+                    "spec": {
+                        "type": "string", 
+                        "id": "http://specsie.org/schema/foundation/inherits0/spec", 
+                        "required": true
+                    }, 
+                    "baseline": {
+                        "type": "string", 
+                        "id": "http://specsie.org/schema/foundation/inherits0/baseline", 
+                        "required": false
+                    }
                 }
             }
         }, 
         "json-schema": {
             "type": "array", 
-            "id": "https://specsy.net/schema/foundation/json-schema", 
+            "id": "http://specsie.org/schema/foundation/json-schema", 
             "required": false, 
             "items": {
                 "type": "string", 
-                "id": "https://specsy.net/schema/foundation/json-schema/0", 
+                "id": "http://specsie.org/schema/foundation/json-schema/0", 
                 "required": false
             }
         }, 
-        "spec": {
-            "type": "string", 
-            "id": "https://specsy.net/schema/foundation/spec", 
-            "required": false
+        "specdoc": {
+            "type": "object", 
+            "id": "http://specsie.org/schema/foundation/specdoc", 
+            "required": true, 
+            "properties": {
+                "spec": {
+                    "type": "string", 
+                    "id": "http://specsie.org/schema/foundation/specdoc/spec", 
+                    "required": true
+                }, 
+                "baseline": {
+                    "type": "string", 
+                    "id": "http://specsie.org/schema/foundation/specdoc/baseline", 
+                    "required": false
+                }
+            }
         }
     }
 }
